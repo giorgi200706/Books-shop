@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../static/css/global.css">
+
+    </head>
+    <body>
+        
+        <header>
+
+        </header>
+        <section>
+
+            <div class="s-1">
+                
+                <div class="container">
+            
+                    {% for books in books_list %} 
+                        <div>
+                            <div>
+                                <h2>{{books.get('name')}}</h2>
+                                <div>
+                                    <h3>{{books.get('author')}}</h3>
+                                    <h4>price: {{books.get('price')}}</h4>
+                                    <a>code: {{books.get('code')}}</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    {% endfor %}
+        
+        
+                </div>
+
+            </div>
+
+        </section>
+        
+        <!--
+            {% for books in books_list %} 
+                <div>
+                    <h2>{{books.get('name')}}</h2>
+                    <h3>{{books.get('author')}}</h3>
+                    <h4>{{books.get('price')}}</h4>
+                    <h4>agwera</h4>
+                    <p>{{books.get('name')}} - {{books.get('author')}}   -   {{books.get('date')}} {{books.get('price')}}  -  {{books.get('code')}}</p>
+
+                </div>
+            {% endfor %}
+        -->
+
+    </body>
+</html>
