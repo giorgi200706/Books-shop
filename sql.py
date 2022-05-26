@@ -3,13 +3,10 @@ database = 'shop.db'
 con = sqlite3.connect('shop.db')
 cur = con.cursor()
 
-#                                                                                                 GHS653VBA62
-# cur.execute('''insert into books values ("To Kill a Mockingbird" , "Harper Lee" , 2006 , 10.99 , "GYFD65B2VED") ''')
-# cur.execute('''insert into books values ("The Diary of a Young Girl" , "Anne Frank" , 1942 , 9.99 , "GB437343264") ''')
-# cur.execute('''insert into books values ("Animal Farm" , "George Orwell" , 1945 , 12.99 , "34VG5V7F7VB") ''')
-# cur.execute('''insert into books values ("The Little Prince" , "Antoine de Saint-Exupéry" , 1943 , 7.99 , "34BYV76G5YB") ''')
-# cur.execute('''insert into books values ("The Great Gatsby" , "F. Scott Fitzgerald" , 1925 , 12.99 , "RB6T43FV543") ''')
-# cur.execute('''insert into books values ("The Lord of the Rings" , " J.R.R. Tolkien" , 1955 , 15.99 , "F7YGY34GGVG") ''')
+#                                                                                                     GHS653VBA62
+# cur.execute('''insert into books values ("Adventure" , "Jack London" , 1911 , 16.99 , "LFVB643V637") ''')
+# cur.execute('''insert into books values ("The Little Lady of the Big House" , "Jack London" , 1915 , 18.99 , "B43BV73NF74") ''')
+# cur.execute('''insert into books values ("The Game" , "Jack London" , 1905 , 7.99 , "V23NF82NF44") ''')
 
 
 # get data from books

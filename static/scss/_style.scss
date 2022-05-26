@@ -1,23 +1,24 @@
 body{
     header{
-        height: 80px;
+        
     }
 
     section{
 
         .s-1{
             background-color: rgba(225, 225, 225, 0.395);
-            padding-top: 50px;
+            padding-top: 80px;
             .container{
-                width: 80%;
+                width: 85%;
                 margin: 0 auto;
+                padding-top: 30px;
                 display: flex;
-                justify-content: space-between;
+                justify-content: space-around;
                 flex-wrap: wrap;
 
                 & > div{
                     width: 230px;
-                    height: 200px;
+                    height: 220px;
                     background-color: rgba(182, 255, 157, 0.313);
                     margin-bottom: 30px;
                     box-shadow: 2px -1px 17px 1px rgba(0, 0, 0, 0.073);
@@ -32,7 +33,7 @@ body{
                             font-size: 30px;
                             text-align: center;  
                             font-family: sans-serif;               
-                            height: 60px;    
+                            height: 80px;    
                         }
                         
                         & > div{

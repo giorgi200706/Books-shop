@@ -43,31 +43,27 @@ table {
   border-spacing: 0;
 }
 
-body header {
-  height: 80px;
-}
-
 body section .s-1 {
   background-color: rgba(225, 225, 225, 0.395);
-  padding-top: 50px;
+  padding-top: 80px;
 }
 
 body section .s-1 .container {
-  width: 80%;
+  width: 85%;
   margin: 0 auto;
+  padding-top: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
 
 body section .s-1 .container > div {
   width: 230px;
-  height: 200px;
+  height: 220px;
   background-color: rgba(182, 255, 157, 0.313);
   margin-bottom: 30px;
   -webkit-box-shadow: 2px -1px 17px 1px rgba(0, 0, 0, 0.073);
@@ -85,7 +81,7 @@ body section .s-1 .container > div > div > h2 {
   font-size: 30px;
   text-align: center;
   font-family: sans-serif;
-  height: 60px;
+  height: 80px;
 }
 
 body section .s-1 .container > div > div > div {
