@@ -1,17 +1,41 @@
 body{
     header{
-        
+        height: 80px;
+        background-color: rgba(0, 129, 86, 0.164);
+        .con{
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            margin: 0 auto;
+            padding-top: 22px;
+
+            & > h1{
+                font-size: 30px;
+            }
+            & > div{
+                & > p{
+                    font-size: 22px;
+                    margin-top: 7px;
+                    margin-right: 20px;
+                    font-family: sans-serif;
+
+                    & > a{
+                        font-size: 20px;
+                        letter-spacing: 0.5px;
+                    }
+                }
+            }
+        }
     }
 
     section{
 
         .s-1{
             background-color: rgba(225, 225, 225, 0.395);
-            padding-top: 80px;
             .container{
                 width: 85%;
                 margin: 0 auto;
-                padding-top: 30px;
+                padding-top: 40px;
                 display: flex;
                 justify-content: space-around;
                 flex-wrap: wrap;
