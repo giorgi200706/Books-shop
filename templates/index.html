@@ -12,12 +12,12 @@
         <header>
             <div class="con">
                 
-                <h1>Books Store</h1>
+                <a href="">Books Store</a>
                 <div>
                     <p>
-                        <a href="#">Sign in</a>
+                        <a href="sign-in">Sign in</a>
                           or  
-                        <a href="#">register</a>
+                        <a href="register">register</a>
                     </p>
                 </div>
 
@@ -30,17 +30,17 @@
                 <div class="container">
             
                     {% for books in books_list %} 
+                    <div>
                         <div>
+                            <a href="book.html"><div>{{books.get('name')}}</div></a>
                             <div>
-                                <h2>{{books.get('name')}}</h2>
-                                <div>
-                                    <h3>{{books.get('author')}}</h3>
-                                    <h4>price: {{books.get('price')}}</h4>
-                                    <a>code: {{books.get('code')}}</a>
-                                </div>
-
+                                <h3>{{books.get('author')}}</h3>
+                                <h4>price: {{books.get('price')}}</h4>
+                                <a>code: {{books.get('code')}}</a>
                             </div>
+
                         </div>
+                    </div>
                     {% endfor %}
         
         
@@ -62,6 +62,10 @@
                 </div>
             {% endfor %}
         -->
+        <footer>
 
+
+
+        </footer>
     </body>
 </html>

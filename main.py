@@ -2,10 +2,8 @@ from flask import Flask, render_template
 import sql
 app = Flask(__name__)
 
-print(sql.books)
 
-
-
+# add data to books
 @app.route('/')
 def education_history():
 
@@ -22,7 +20,24 @@ def education_history():
 
     return render_template("index.html", books_list=books)
 
-    
+
+
+# register page  
+@app.route('/register')
+def register():
+
+
+    return render_template("pages/register.html")
+
+
+
+# sign in page
+@app.route('/sign-in')
+def sign():
+
+
+    return render_template("pages/sign-in.html")
+
 
 
 if __name__ == "__main__":

@@ -18,5 +18,6 @@ items  = cur.fetchall()
 users = items;
 
 
+
 con.commit()
 con.close()

@@ -4,9 +4,45 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../static/css/global.css">
         <title>Document</title>
     </head>
     <body>
-        
+        <header>
+            <div class="con">
+                
+                <a href="/">Books Store</a>
+                <div>
+                    <p>
+                        <a href="sign-in">Sign in</a>
+                          or  
+                        <a href="/register">register</a>
+                    </p>
+                </div>
+
+            </div>
+        </header>
+        <section>
+
+            <form action="" method="get">
+                <label for="name">First name:</label>
+                <input id="name" type="text" placeholder="name" name="name">
+
+                <label for="surname">Last name:</label>
+                <input id="surname" type="text" placeholder="surname" name="surname">
+
+                <label for="nickname">Nickname:</label>
+                <input id="nickname" type="text" placeholder="nickname" name="nickname">
+
+                <label for="gmail">Gmail:</label>
+                <input id="gmail" type="email" placeholder="gmail" name="gmail">
+
+                <label for="password">Password:</label>
+                <input id="password" type="password" placeholder="password" name="pass">
+
+                <input class="submit" type="submit" value="Submit">
+            </form> 
+
+        </section>
     </body>
 </html>

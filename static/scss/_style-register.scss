@@ -1,0 +1,25 @@
+section{
+    & > form{
+        margin: 0 auto;
+        margin-top: 150px;
+        width: 35%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+
+        & > label{
+            font-family: sans-serif;
+            font-size: 16px;
+            margin-bottom: 2px;
+        }
+        & > input{
+            height: 22px;
+            margin-bottom: 12px;
+        }
+        .submit{
+            background-color: rgba(0, 129, 86, 0.164);
+            border: 1px solid;
+            height: 30px;
+        }
+    }
+}
