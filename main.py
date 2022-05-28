@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 # add data to books
 @app.route('/')
-def education_history():
+def mainpagebooks():
 
     books = []
     for i in range(len(sql.books)):
@@ -44,18 +44,6 @@ def education_history():
 
 
 
-    users = []
-    for i in range(len(sql.users)):
-        users.append({
-            "name": sql.users[i][0],
-            "surname": sql.users[i][1],
-            "username": sql.users[i][2],
-            "gmail": sql.users[i][3],
-            "password": sql.users[i][4],
-        })
-
-    return render_template("index.html", books_list=books)
-
 # book page
 @app.route('/<name>')
 def show_book(name):
@@ -88,9 +76,44 @@ def register():
 @app.route('/sign-in')
 def sign():
 
+    # create users dictionary andd fill
+    users = []
+    for i in range(len(sql.users)):
+        users.append({
+            "name": sql.users[i][0],
+            "surname": sql.users[i][1],
+            "username": sql.users[i][2],
+            "gmail": sql.users[i][3],
+            "password": sql.users[i][4],
+        })
 
-    return render_template("pages/sign-in.html")
+    username =  request.args.get("username")
+    password =  request.args.get("password")
+    submit = request.args.get("submit")
 
+    mk = 2
+    # 1-shevedit
+    # 2-ver shevedit
+
+    # return render_template("pages/sign-in.html" , text = "Incorrect password or username")
+    
+
+    if submit == "Submit":
+        
+        for i in range(len(users)):
+            if password == users[i]["password"] and username == users[i]["username"]:
+                mk = 1
+
+        if mk == 1:
+            return render_template("pages/sign-in.html" , yes = "you entered on the account" , no = "")
+        else:
+            return render_template("pages/sign-in.html" , no = "Incorrect password or username" , yes = "")
+
+
+    else:
+        
+        return render_template("pages/sign-in.html" , yes = "" , no = "")
+        
 
 
 if __name__ == "__main__":
