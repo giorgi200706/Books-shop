@@ -32,7 +32,7 @@
                     {% for books in books_list %} 
                     <div>
                         <div>
-                            <a href="book.html"><div>{{books.get('name')}}</div></a>
+                            <a href="/{{books.get('name')}}"><div>{{books.get('name')}}</div></a>
                             <div>
                                 <h3>{{books.get('author')}}</h3>
                                 <h4>price: {{books.get('price')}}</h4>

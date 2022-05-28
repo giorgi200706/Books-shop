@@ -20,12 +20,29 @@ def education_history():
 
     return render_template("index.html", books_list=books)
 
+# book page
+@app.route('/<name>')
+def show_book(name):
+    
+    for i in range(len(sql.books)):
+        if sql.books[i][0] == name:
+            var = i;
+
+            return render_template("pages/book.html" , 
+                            name = name , 
+                            author = sql.books[var][1] , 
+                            date = sql.books[var][2] , 
+                            price = sql.books[var][3] , 
+                            code = sql.books[var][4]
+                            )
+
 
 
 # register page  
 @app.route('/register')
 def register():
 
+    
 
     return render_template("pages/register.html")
 

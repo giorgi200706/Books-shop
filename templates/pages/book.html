@@ -1,12 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ books_list }}</title>
-  </head>
-  <body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../static/css/global.css">
+        <title>Document</title>
+    </head>
+    <body>
 
-  </body>
+        <header>
+            <div class="con">
+                  
+              <a href="/">Books Store</a>
+              <div>
+                  <p>
+                      <a href="sign-in">Sign in</a>
+                        or  
+                      <a href="register">register</a>
+                  </p>
+              </div>
+
+            </div>
+        </header>
+        <section>
+
+            <div class="book">
+                <img src="https://www.supplies.org.uk/uploads/images/large-image/product-images/XBG.jpg" alt="img">
+                <h3 class="h3" >{{ name }}</h3>
+                <div class="info">
+                    <h3>name: {{ name }}</h3>
+                    <h4>author: {{ author }}</h4>
+                    <h5>date: {{ date }}</h5>
+                    <h6>price: {{ price }}</h6>
+                    <p>code: {{ code }}</p>
+                </div>
+            </div>
+
+        </section>
+        <footer>
+
+        </footer>
+
+    </body>
 </html>
