@@ -34,6 +34,25 @@ body{
 
         .s-1{
             background-color: rgba(225, 225, 225, 0.395);
+
+            .forms{
+                padding-top: 40px;
+                width: 80%;
+                margin: 0 auto;
+
+                & > form{
+                    display: flex;
+                    justify-content: end;
+
+                    & > label{
+                        font-family: sans-serif;
+                    }
+                    & > input{
+                        background-color: rgba(0, 129, 86, 0.164);
+                        border: 1px solid;
+                    }
+                }
+            }
             .container{
                 width: 85%;
                 margin: 0 auto;

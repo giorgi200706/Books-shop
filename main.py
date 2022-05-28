@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template , request
 import sql
 app = Flask(__name__)
 
@@ -16,6 +16,32 @@ def education_history():
             "price": sql.books[i][3],
             "code": sql.books[i][4],
         })
+    
+    # sort books by price and output
+    books_sort = books
+    sort =  request.args.get("sort")
+    if sort == "plh":
+        for i in range(len(books_sort)):
+            for o in range(len(books_sort)):
+                if o<i and books_sort[o]["price"] > books_sort[i]["price"] :
+                    y = books_sort[i]
+                    books_sort[i] = books_sort[o]
+                    books_sort[o] = y;
+        
+        return render_template("index.html", books_list=books_sort)
+
+    elif sort == "phl":
+        for i in range(len(books_sort)):
+            for o in range(len(books_sort)):
+                if o>i and books_sort[o]["price"] > books_sort[i]["price"] :
+                    y = books_sort[i]
+                    books_sort[i] = books_sort[o]
+                    books_sort[o] = y;
+        return render_template("index.html", books_list=books_sort)
+
+    else:
+        return render_template("index.html", books_list=books)
+
 
 
     users = []

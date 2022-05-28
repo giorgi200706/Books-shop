@@ -27,6 +27,18 @@
 
             <div class="s-1">
                 
+                <div class="forms">
+                    <form action="" method="get">
+                        <label for="cars">Sort by:</label>
+                        <select id="sort" name="sort">
+                            <option value="f">Featured</option>
+                            <option value="plh">Price: Low to High</option>
+                            <option value="phl">Price: High to Low</option>
+                        </select>
+                        <input type="submit">
+                    </form>
+                </div>
+
                 <div class="container">
             
                     {% for books in books_list %} 
