@@ -8,7 +8,6 @@ app = Flask(__name__)
 def education_history():
 
     books = []
-
     for i in range(len(sql.books)):
         books.append({
             "name": sql.books[i][0],
@@ -16,6 +15,17 @@ def education_history():
             "date": sql.books[i][2],
             "price": sql.books[i][3],
             "code": sql.books[i][4],
+        })
+
+
+    users = []
+    for i in range(len(sql.users)):
+        users.append({
+            "name": sql.users[i][0],
+            "surname": sql.users[i][1],
+            "username": sql.users[i][2],
+            "gmail": sql.users[i][3],
+            "password": sql.users[i][4],
         })
 
     return render_template("index.html", books_list=books)
@@ -33,8 +43,8 @@ def show_book(name):
                             author = sql.books[var][1] , 
                             date = sql.books[var][2] , 
                             price = sql.books[var][3] , 
-                            code = sql.books[var][4]
-                            )
+                            code = sql.books[var][4])
+
 
 
 

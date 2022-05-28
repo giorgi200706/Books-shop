@@ -3,8 +3,9 @@ database = 'shop.db'
 con = sqlite3.connect('shop.db')
 cur = con.cursor()
 
-#                                                                                                             GHS653VBA62
-# cur.execute('''insert into books values ("The Help" , "Kathryn Stockett" , 2009 , 11.99 ,       "3GV72B7CBV") ''')
+#                                                                                                  GHS653VBA62
+# cur.execute('''insert into books values ("The Anubis Gates" , "Tim Powers" , 1983 , 12.99 ,       "3GV72B7CBV") ''')
+
 
 
 # get data from books
