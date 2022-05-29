@@ -145,9 +145,37 @@ def sign():
 
 @app.route('/add new book')
 def addbook():
-    nana = 0;
 
-    return render_template('pages/add-book.html')
+    books = []
+    for i in range(len(sql.books)):
+        books.append({
+            "name": sql.books[i][0],
+            "author": sql.books[i][1],
+            "date": sql.books[i][2],
+            "price": sql.books[i][3],
+            "code": sql.books[i][4],
+        })
+
+    name =  request.args.get("name")
+    author =  request.args.get("author")
+    date = request.args.get("date")
+    price =  request.args.get("price")
+    code =  request.args.get("code")
+    submit = request.args.get("submit")
+
+    if submit == 'Submit':
+        k = False
+        for i in range(len(books)):
+            if books[i]["name"] == name :
+                k = True
+
+        if k == False:
+            sql.add_books(name , author , date , price , code)
+            return render_template("pages/add-book.html" , yes = "The book was added" , no = "")
+        else:
+            return render_template("pages/add-book.html" , yes = "" , no = "We already have this book")
+    else:
+        return render_template("pages/add-book.html" , yes = "" , no = "")
 
 
 if __name__ == "__main__":

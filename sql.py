@@ -21,4 +21,9 @@ def add_users(name , surname , username , gmail , password):
     cur.execute("INSERT INTO users (name , surname , username , gmail , password) VALUES (? , ? , ? , ? , ?)" , (name , surname , username , gmail , password))
     con.commit();
 
+# function which add users in database
+def add_books(name , author , date , price , code):
+    cur.execute("INSERT INTO books (name , author , date , price , code) VALUES (? , ? , ? , ? , ?)" , (name , author , date , float(price) , code))
+    con.commit();
+
 con.commit()

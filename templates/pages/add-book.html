@@ -8,6 +8,50 @@
 
     </head>
     <body>
-        <h4>hello mama</h4>
+        <header>
+            <div class="con">
+                
+                <a href="/">Books Store</a>
+                <div>
+                    <p>
+                        <a href="sign-in">Sign in</a>
+                          or  
+                        <a href="register">register</a>
+                    </p>
+                </div>
+
+            </div>
+        </header>
+        
+        <section>
+            <div>
+                <h5>
+                    {{ yes }}
+                </h5>
+                <h6>
+                    {{ no }}
+                </h6>
+            </div>
+
+            <form action="" method="get">
+                <label for="name">Name of the book</label>
+                <input id="name" type="text" placeholder="name" name="name">
+    
+                <label for="author">Author</label>
+                <input id="author" type="text" placeholder="author" name="author">
+    
+                <label for="year">Year:</label>
+                <input id="year" type="text" placeholder="year" name="date">
+    
+                <label for="price">Price:</label>
+                <input id="price" type="price" placeholder="price" name="price">
+    
+                <label for="code">Code:</label>
+                <input id="code" type="code" placeholder="code" name="code">
+    
+                <input class="submit" type="submit" name="submit" id="submit">
+            </form>
+        </section> 
+
     </body>
 </html>

@@ -86,6 +86,17 @@ body section .s-1 .head {
   padding-top: 40px;
   width: 80%;
   margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body section .s-1 .head > a {
+  font-size: 22px;
+  font-family: sans-serif;
 }
 
 body section .s-1 .head > form {
@@ -99,6 +110,8 @@ body section .s-1 .head > form {
 
 body section .s-1 .head > form > label {
   font-family: sans-serif;
+  margin-top: 3px;
+  margin-right: 5px;
 }
 
 body section .s-1 .head > form > input {
