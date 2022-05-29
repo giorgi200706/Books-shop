@@ -16,6 +16,17 @@ data = cur.execute("select * from users")
 items  = cur.fetchall()
 users = items;
 
+def hello():
+    # get data from books
+    data = cur.execute("select * from books")
+    items  = cur.fetchall()
+    books = items;
+
+    # get data from work
+    data = cur.execute("select * from users")
+    items  = cur.fetchall()
+    users = items;
+
 # function which add users in database
 def add_users(name , surname , username , gmail , password):
     cur.execute("INSERT INTO users (name , surname , username , gmail , password) VALUES (? , ? , ? , ? , ?)" , (name , surname , username , gmail , password))

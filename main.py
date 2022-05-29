@@ -2,20 +2,30 @@ from flask import Flask, render_template , request
 import sql
 app = Flask(__name__)
 
+books = []
+for i in range(len(sql.books)):
+    books.append({
+        "name": sql.books[i][0],
+        "author": sql.books[i][1],
+        "date": sql.books[i][2],
+        "price": sql.books[i][3],
+        "code": sql.books[i][4],
+    })
+
+users = []
+for i in range(len(sql.users)):
+    users.append({
+        "name": sql.users[i][0],
+        "surname": sql.users[i][1],
+        "username": sql.users[i][2],
+        "gmail": sql.users[i][3],
+        "password": sql.users[i][4],
+    })
+
 
 # add data to books
 @app.route('/')
 def mainpagebooks():
-
-    books = []
-    for i in range(len(sql.books)):
-        books.append({
-            "name": sql.books[i][0],
-            "author": sql.books[i][1],
-            "date": sql.books[i][2],
-            "price": sql.books[i][3],
-            "code": sql.books[i][4],
-        })
     
     # sort books by price and output
     books_sort = books
@@ -66,17 +76,6 @@ def show_book(name):
 @app.route('/register' , methods = ["POST" , "GET"])
 def register():
 
-    # create users dictionary andd fill
-    users = []
-    for i in range(len(sql.users)):
-        users.append({
-        "name": sql.users[i][0],
-        "surname": sql.users[i][1],
-        "username": sql.users[i][2],
-        "gmail": sql.users[i][3],
-        "password": sql.users[i][4],
-    })
-
     name =  request.args.get("name")
     surname =  request.args.get("surname")
     username = request.args.get("username")
@@ -93,6 +92,13 @@ def register():
 
         if k == False:
             sql.add_users(name , surname , username , gmail , password)
+            users.append({
+                "name": name,
+                "surname": surname,
+                "username": username,
+                "gmail": gmail,
+                "password": password,
+            })
             return render_template("pages/register.html" , yes = "You have registered" , no = "")
         else:
             return render_template("pages/register.html" , yes = "" , no = "You are already registered")
@@ -103,17 +109,6 @@ def register():
 # sign in page
 @app.route('/sign-in')
 def sign():
-
-    # create users dictionary andd fill
-    users = []
-    for i in range(len(sql.users)):
-        users.append({
-        "name": sql.users[i][0],
-        "surname": sql.users[i][1],
-        "username": sql.users[i][2],
-        "gmail": sql.users[i][3],
-        "password": sql.users[i][4],
-    })
 
     username =  request.args.get("username")
     password =  request.args.get("password")
@@ -146,16 +141,6 @@ def sign():
 @app.route('/add new book')
 def addbook():
 
-    books = []
-    for i in range(len(sql.books)):
-        books.append({
-            "name": sql.books[i][0],
-            "author": sql.books[i][1],
-            "date": sql.books[i][2],
-            "price": sql.books[i][3],
-            "code": sql.books[i][4],
-        })
-
     name =  request.args.get("name")
     author =  request.args.get("author")
     date = request.args.get("date")
@@ -171,6 +156,13 @@ def addbook():
 
         if k == False:
             sql.add_books(name , author , date , price , code)
+            books.append({
+                "name": name,
+                "author": author,
+                "date": date,
+                "price": price,
+                "code": code,
+            })
             return render_template("pages/add-book.html" , yes = "The book was added" , no = "")
         else:
             return render_template("pages/add-book.html" , yes = "" , no = "We already have this book")
