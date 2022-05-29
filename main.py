@@ -43,7 +43,6 @@ def mainpagebooks():
         return render_template("index.html", books_list=books)
 
 
-
 # book page
 @app.route('/<name>')
 def show_book(name):
@@ -57,19 +56,48 @@ def show_book(name):
                             author = sql.books[var][1] , 
                             date = sql.books[var][2] , 
                             price = sql.books[var][3] , 
-                            code = sql.books[var][4])
-
-
+                            code = sql.books[var][4] )
+        
+    else:
+            return render_template("pages/book.html");
 
 
 # register page  
-@app.route('/register')
+@app.route('/register' , methods = ["POST" , "GET"])
 def register():
 
-    
+    # create users dictionary andd fill
+    users = []
+    for i in range(len(sql.users)):
+        users.append({
+        "name": sql.users[i][0],
+        "surname": sql.users[i][1],
+        "username": sql.users[i][2],
+        "gmail": sql.users[i][3],
+        "password": sql.users[i][4],
+    })
 
-    return render_template("pages/register.html")
+    name =  request.args.get("name")
+    surname =  request.args.get("surname")
+    username = request.args.get("username")
+    gmail =  request.args.get("gmail")
+    password =  request.args.get("pass")
+    submit = request.args.get("submit")
 
+    hello = " "
+    if submit == 'Submit':
+        k = False
+        for i in range(len(users)):
+            if users[i]["username"] == username :
+                k = True
+
+        if k == False:
+            sql.add_users(name , surname , username , gmail , password)
+            return render_template("pages/register.html" , yes = "You have registered" , no = "")
+        else:
+            return render_template("pages/register.html" , yes = "" , no = "You are already registered")
+    else:
+        return render_template("pages/register.html" , yes = "" , no = "")
 
 
 # sign in page
@@ -80,12 +108,12 @@ def sign():
     users = []
     for i in range(len(sql.users)):
         users.append({
-            "name": sql.users[i][0],
-            "surname": sql.users[i][1],
-            "username": sql.users[i][2],
-            "gmail": sql.users[i][3],
-            "password": sql.users[i][4],
-        })
+        "name": sql.users[i][0],
+        "surname": sql.users[i][1],
+        "username": sql.users[i][2],
+        "gmail": sql.users[i][3],
+        "password": sql.users[i][4],
+    })
 
     username =  request.args.get("username")
     password =  request.args.get("password")
@@ -114,6 +142,10 @@ def sign():
         
         return render_template("pages/sign-in.html" , yes = "" , no = "")
         
+
+@app.route('/add-book')
+def addbook():
+    nana = 0;
 
 
 if __name__ == "__main__":

@@ -1,4 +1,20 @@
 section{
+    & > div{
+        & > h5,h6{
+            font-size: 20px;
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        & > h5{
+            color: green;
+        }
+        & > h6{
+            color: red;
+        }
+    }
     & > form{
         margin: 0 auto;
         margin-top: 150px;

@@ -172,6 +172,26 @@ body footer {
   height: 300px;
 }
 
+section > div > h5, section > div h6 {
+  font-size: 20px;
+  font-family: sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 30px;
+}
+
+section > div > h5 {
+  color: green;
+}
+
+section > div > h6 {
+  color: red;
+}
+
 section > form {
   margin: 0 auto;
   margin-top: 150px;
@@ -293,6 +313,16 @@ section .book .info {
 }
 
 section .book .info > h3, section .book .info h4, section .book .info h5, section .book .info h6, section .book .info p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   font-size: 25px;
   margin-top: 20px;
   font-family: sans-serif;
