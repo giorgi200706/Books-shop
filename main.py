@@ -59,7 +59,7 @@ def show_book(name):
                             code = sql.books[var][4] )
         
     else:
-            return render_template("pages/book.html");
+            return render_template("pages/no.html");
 
 
 # register page  
@@ -143,9 +143,11 @@ def sign():
         return render_template("pages/sign-in.html" , yes = "" , no = "")
         
 
-@app.route('/add-book')
+@app.route('/add new book')
 def addbook():
     nana = 0;
+
+    return render_template('pages/add-book.html')
 
 
 if __name__ == "__main__":

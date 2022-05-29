@@ -82,13 +82,13 @@ body section .s-1 {
   background-color: rgba(225, 225, 225, 0.395);
 }
 
-body section .s-1 .forms {
+body section .s-1 .head {
   padding-top: 40px;
   width: 80%;
   margin: 0 auto;
 }
 
-body section .s-1 .forms > form {
+body section .s-1 .head > form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -97,11 +97,11 @@ body section .s-1 .forms > form {
           justify-content: end;
 }
 
-body section .s-1 .forms > form > label {
+body section .s-1 .head > form > label {
   font-family: sans-serif;
 }
 
-body section .s-1 .forms > form > input {
+body section .s-1 .head > form > input {
   background-color: rgba(0, 129, 86, 0.164);
   border: 1px solid;
 }
@@ -120,6 +120,8 @@ body section .s-1 .container {
 }
 
 body section .s-1 .container > div {
+  margin-left: 15px;
+  margin-right: 15px;
   text-decoration: none;
   width: 230px;
   height: 220px;
@@ -170,6 +172,16 @@ body section .s-1 .container > div > div > div > a {
 
 body footer {
   height: 300px;
+}
+
+.no {
+  font-size: 45px;
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 400px;
+  text-align: center;
+  color: red;
+  font-family: sans-serif;
 }
 
 section > div > h5, section > div h6 {
