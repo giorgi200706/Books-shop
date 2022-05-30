@@ -33,7 +33,7 @@ def mainpagebooks():
     if sort == "plh":
         for i in range(len(books_sort)):
             for o in range(len(books_sort)):
-                if o<i and books_sort[o]["price"] > books_sort[i]["price"] :
+                if o<i and float(books_sort[o]["price"]) > float(books_sort[i]["price"]) :
                     y = books_sort[i]
                     books_sort[i] = books_sort[o]
                     books_sort[o] = y;
@@ -43,7 +43,7 @@ def mainpagebooks():
     elif sort == "phl":
         for i in range(len(books_sort)):
             for o in range(len(books_sort)):
-                if o>i and books_sort[o]["price"] > books_sort[i]["price"] :
+                if o>i and float(books_sort[o]["price"]) > float(books_sort[i]["price"]) :
                     y = books_sort[i]
                     books_sort[i] = books_sort[o]
                     books_sort[o] = y;
