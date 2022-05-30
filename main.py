@@ -63,7 +63,7 @@ def show_book(name):
 
             return render_template("pages/book.html" , 
                             name = name , 
-                            author = books[var]["author"] , 
+                            author = books[var]["name"] , 
                             date = books[var]["date"] , 
                             price = books[var]["price"] , 
                             code = books[var]["code"] )
