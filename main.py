@@ -57,16 +57,16 @@ def mainpagebooks():
 @app.route('/<name>')
 def show_book(name):
     
-    for i in range(len(sql.books)):
-        if sql.books[i][0] == name:
+    for i in range(len(books)):
+        if books[i]["name"] == name:
             var = i;
 
             return render_template("pages/book.html" , 
                             name = name , 
-                            author = sql.books[var][1] , 
-                            date = sql.books[var][2] , 
-                            price = sql.books[var][3] , 
-                            code = sql.books[var][4] )
+                            author = books[var]["author"] , 
+                            date = books[var]["date"] , 
+                            price = books[var]["price"] , 
+                            code = books[var]["code"] )
         
     else:
             return render_template("pages/no.html");
